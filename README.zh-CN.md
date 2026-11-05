@@ -60,6 +60,10 @@ python3 scripts/validate_skill.py path/to/skill-folder
 
 报错（退出码 1）：SKILL.md 缺失、frontmatter 缺 `name:`/`description:`、SKILL.md 中的相对链接指向不存在的文件、`references/` 为空。警告：无 Agent 边界表述（第 3 步）、无验证材料（第 6 步）。输出为一个 JSON 对象。
 
+## 持续集成
+
+`ci/` 里备有 GitHub Actions 工具包：把 `ci/ci.yml` 复制到 `.github/workflows/ci.yml` 即可启用。内容为：用 validator 校验本仓自身，并断言故意做坏的样例技能被拒绝。
+
 ## 许可证
 
 MIT —— 见 [LICENSE](LICENSE)。

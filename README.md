@@ -60,6 +60,10 @@ python3 scripts/validate_skill.py path/to/skill-folder
 
 Errors (exit 1): missing SKILL.md, missing frontmatter `name:`/`description:`, a relative link in SKILL.md that does not resolve, an empty `references/`. Warnings: no agent-boundary language (step 3), no validation material (step 6). Output is one JSON object.
 
+## CI
+
+A ready-to-enable GitHub Actions kit lives in `ci/`: copy `ci/ci.yml` to `.github/workflows/ci.yml`. It runs the skill validator against this repo itself and asserts that the deliberately broken fixture skill is rejected.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
