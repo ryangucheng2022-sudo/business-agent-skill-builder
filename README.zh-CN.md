@@ -50,6 +50,16 @@
 
 `examples/` 里有成品的样子可以参照。
 
+## 校验工具
+
+`scripts/validate_skill.py` 把验证清单里可机器检查的部分落成脚本，可对任何按本方法建出的技能目录运行：
+
+```bash
+python3 scripts/validate_skill.py path/to/skill-folder
+```
+
+报错（退出码 1）：SKILL.md 缺失、frontmatter 缺 `name:`/`description:`、SKILL.md 中的相对链接指向不存在的文件、`references/` 为空。警告：无 Agent 边界表述（第 3 步）、无验证材料（第 6 步）。输出为一个 JSON 对象。
+
 ## 许可证
 
 MIT —— 见 [LICENSE](LICENSE)。

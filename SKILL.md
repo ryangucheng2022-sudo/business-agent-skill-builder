@@ -1,3 +1,8 @@
+---
+name: business-agent-skill-builder
+description: Turn company business workflows into reusable agent skills and agent operating patterns. Use when developing, improving, standardizing, or validating a business-related agent or skill — cost accounting, quotation analysis, OA approval, contract review, KPI reporting, monthly business review, Excel-based process automation, or any SOP that should become a repeatable agent capability.
+---
+
 # Business Agent Skill Builder
 
 ## Overview

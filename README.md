@@ -50,6 +50,16 @@ Copy this folder into your agent platform's skills directory and ask the agent t
 
 The worked example in `examples/` shows what a finished business skill looks like.
 
+## Validate a built skill
+
+`scripts/validate_skill.py` machine-checks the structural part of the validation checklist against any skill folder built with this method:
+
+```bash
+python3 scripts/validate_skill.py path/to/skill-folder
+```
+
+Errors (exit 1): missing SKILL.md, missing frontmatter `name:`/`description:`, a relative link in SKILL.md that does not resolve, an empty `references/`. Warnings: no agent-boundary language (step 3), no validation material (step 6). Output is one JSON object.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
