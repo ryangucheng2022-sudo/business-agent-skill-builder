@@ -28,6 +28,20 @@ Most "agent skills" fail in business settings not because the model is weak, but
 
 Start with **one closed-loop task**, not a department assistant. Capture real invocation examples and artifacts. Define the **agent boundary** before writing anything: read vs. write, which systems, what needs human confirmation. Structure the skill minimally — rules in `references/`, deterministic work in `scripts/`, templates in `assets/`. Write instructions that tell the agent how to *perform* the work, with source checks, escalation and validation built in. **Validate against historical or representative cases** (normal, missing-field, conflicting-source, edge, and a real case with a known answer). Then iterate from real use, in small updates.
 
+## Method overview
+
+The builder runs seven steps. Each has a checkpoint — do not proceed past a failed one.
+
+| Step | Input | Output | Checkpoint |
+|---|---|---|---|
+| 1. Scope the workflow | A real business process (SOP, habit, or pain point) | One narrow workflow with an owner | Is it narrow enough to validate? |
+| 2. Capture examples | Real cases, including exceptions and edge cases | A case set the skill must handle | Do the cases include failures, not just the happy path? |
+| 3. Define agent boundary | The workflow plus risk points (approvals, money, commitments) | May / must-never / escalate lists | Boundary before build — always |
+| 4. Design skill contents | Boundary + cases | Skill outline: instructions, references, templates | Every content block traces to a case or a rule |
+| 5. Write business-grade instructions | Outline | The skill itself: explicit inputs, outputs, calculations, escalation points | Could a new hire execute from this alone? |
+| 6. Validate the skill | The case set from step 2 | Pass/fail per case with failure notes | Validated against real cases before release |
+| 7. Iterate from use | Corrections observed in real use | Updated skill + new validation cases | Every real correction becomes a case |
+
 ## Usage
 
 Copy this folder into your agent platform's skills directory and ask the agent to build a skill with it, e.g.:
