@@ -19,6 +19,7 @@ Use this skill to [perform the workflow] for [target audience or business owner]
 - [Required file, table, system, or user-provided data]
 - [Required field or business parameter]
 - [Optional but useful supporting source]
+- Input manifest (data-intensive workflows): [one entry per expected file or export — source system, period, key fields, and whether its absence blocks the run]
 
 If required inputs are missing, ask for them or produce a partial result labeled `Needs confirmation`.
 

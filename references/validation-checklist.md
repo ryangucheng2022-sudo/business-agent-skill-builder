@@ -49,6 +49,21 @@ For each case, compare:
 - Output format.
 - Whether the agent asked for confirmation at the right time.
 
+## Data and Code Validation
+
+For data-intensive skills, also check (see `references/data-pipeline-standards.md`):
+
+- Source inputs are snapshotted and never modified in place; results do not depend on `.bak` copies.
+- An input manifest declares expected files, source systems, periods, and key fields, and is validated at entry.
+- A missing or malformed input stops the run instead of silently producing blank columns or partial results.
+- Compute scripts read only a normalized staging layer, never source-system files directly.
+- File lookup and data reading live in one shared module; renaming a source touches one place.
+- Extract, transform, and presentation steps can be tested and re-run separately; scripts are import-safe (no logic, argument parsing, or global state at import time).
+- Rates, mappings, thresholds, and paths are configuration, not code constants; dependencies are pinned.
+- A baseline case exists as a re-runnable fixture with an expected result, not as numbers in a document.
+- The workflow runs end to end from a single entry point, and run state is stored in a structured state file so an interrupted run can resume.
+- Human confirmations are written back as data and matched to records by identity (key fields), never by row position alone.
+
 ## Done Criteria
 
 The skill is ready when a fresh agent session can use it to:

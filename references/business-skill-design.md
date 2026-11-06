@@ -41,6 +41,8 @@ Inputs:
 - Source priority when multiple files conflict.
 - Date, currency, unit, and version assumptions.
 
+For data-intensive workflows, write the inputs as a manifest, not a prose list: one entry per expected file or export, naming its source system, period, key fields or structure, and how severe its absence is (blocker versus warning). The workflow validates the manifest at entry and stops on a blocker instead of degrading silently. See `references/data-pipeline-standards.md`.
+
 Outputs:
 - Final artifact type.
 - Required sections, sheets, columns, or comments.

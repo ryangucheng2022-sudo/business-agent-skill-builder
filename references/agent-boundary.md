@@ -62,3 +62,7 @@ Do not hide missing data behind polished prose.
 Do not treat a similar historical case as a policy unless the user says it is authoritative.
 
 Prefer a draft recommendation when the workflow has legal, financial, HR, approval, or customer impact.
+
+Keep computation deterministic. All calculation belongs in scripts; the agent only triggers the workflow, supplies parameters, obtains human confirmations, and reports exceptions. If swapping the agent or model would change the numbers, the boundary is wrong — move that logic into a script.
+
+Write human confirmations back as data, and match them to records by identity (key fields such as item or document codes), never by row number or position alone. Rows can be re-sorted, added, or removed between collection and write-back; an identity check is what prevents a confirmed value from landing on the wrong record.

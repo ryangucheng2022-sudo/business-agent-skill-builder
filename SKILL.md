@@ -89,6 +89,8 @@ Use `references/` for business rules, field dictionaries, SOPs, policy notes, an
 
 Read `references/business-skill-template.md` before drafting a new business skill.
 
+If the workflow is data-intensive — it reads source files or system exports and computes results — also read `references/data-pipeline-standards.md` before designing the file layout or scripts. It covers immutable raw inputs, an input manifest, data layering, a single data-access layer, and reproducible baselines.
+
 ## Step 5: Write Business-Grade Instructions
 
 The resulting skill should tell the agent how to perform the work, not explain the business in a textbook style.
@@ -117,7 +119,7 @@ Check:
 - The result cites source files, fields, or assumptions.
 - The output is usable by the target business audience.
 
-Read `references/validation-checklist.md` before calling the skill done.
+Read `references/validation-checklist.md` before calling the skill done. For data-intensive skills, its Data and Code Validation section is a release gate, not a suggestion: the skill is not done until a baseline case can be re-run from untouched inputs and reproduce its expected result.
 
 ## Step 7: Iterate From Use
 
